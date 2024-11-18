@@ -31,21 +31,26 @@ See docs for more information: https://registry.terraform.io/providers/hashicorp
 
 In powershell:
 * terraform init: The terraform init command initializes a working directory containing Terraform configuration files. This is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control. It is safe to run this command multiple times.
+* terraform init -upgrade
 * terraform plan -out main.tfplan -> Creates a plan comparing the declared state to the existing env.
 * terraform apply main.tfplan: Executes the actions in the terraform plan.
+* terraform destroy
 
 ## Caveats
-Terraform does not execute in the order of the script, nor does it wait for dependent resources to be created in sequence by Azure
+Terraform does not execute in the order of the script, nor does it wait for dependent resources to be created in sequence by Azure.
 
 ## Add dependencies
-Important to add the depend_on() to blocks
+Important to add the depend_on() to blocks when depends on other resource, but does not reference it.
 
 ## Variables
 * Locals
 * Input (variable() + .tfvars)
 * Output
+
 ## .tfvars
 A nice article on .tfvars files:
 https://spacelift.io/blog/terraform-tfvars
 
 
+## Output values
+"Output values make information about your infrastructure available on the command line, and can expose information for other Terraform configurations to use. Output values are similar to return values in programming languages."
