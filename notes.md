@@ -47,10 +47,25 @@ Important to add the depend_on() to blocks when depends on other resource, but d
 * Input (variable() + .tfvars)
 * Output
 
-## .tfvars
-A nice article on .tfvars files:
-https://spacelift.io/blog/terraform-tfvars
-
 
 ## Output values
 "Output values make information about your infrastructure available on the command line, and can expose information for other Terraform configurations to use. Output values are similar to return values in programming languages."
+
+
+## .tfstate
+"Terraform must store state about your managed infrastructure and configuration. This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures."
+
+## Input variables
+"Input variables let you customize aspects of Terraform modules without altering the module's own source code. This functionality allows you to share modules across different Terraform configurations, making your module composable and reusable.
+
+When you declare variables in the root module of your configuration, you can set their values using CLI options and environment variables. When you declare them in child modules, the calling module should pass values in the module block."
+
+### .tfvars
+A nice article on .tfvars files:
+https://spacelift.io/blog/terraform-tfvars
+
+sensiteive bool option rm print
+## Terraform validate
+"The terraform validate command validates the configuration files in a directory, referring only to the configuration and not accessing any remote services such as remote state, provider APIs, etc.
+
+Validate runs checks that verify whether a configuration is syntactically valid and internally consistent, regardless of any provided variables or existing state. It is thus primarily useful for general verification of reusable modules, including correctness of attribute names and value types."

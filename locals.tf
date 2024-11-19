@@ -1,4 +1,6 @@
 locals {
+    location = "North Europe"
+    resource_group_name = "rg-train"
     virtual_network = {
         name = "network-train"
         address_space="10.0.0.0/16"

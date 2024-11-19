@@ -13,16 +13,12 @@ variable "client_id_train" {
 
 variable "client_secret_train" {
     type = string
+    sensitive = true
 }
 
-# resources:
-variable "location" {
-    default = "North Europe"
+variable "admin_username" {
     type = string
+    description = "The admin username for the virtual machine."
 }
 
-variable "resource_group_name" {
-    type = string
-}
-
-# Values assigned/managed in the local env vars or in terraform.tfvars file
+# Values assigned/managed in the local env vars (prefixwd TF_VAR_) or in terraform.tfvars file

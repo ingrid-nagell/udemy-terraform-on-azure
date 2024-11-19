@@ -18,6 +18,6 @@ provider "azurerm" {
 
 # Create a resource group
 resource "azurerm_resource_group" "appgrp" { # This name is given within the config file
-    name = var.resource_group_name # the actual name of ther resource we try to deploy
-    location = var.location
+    name = local.resource_group_name # the actual name of ther resource we try to deploy
+    location = local.location
 }
